@@ -25,7 +25,7 @@
 <section>
 
     <div id="buttons">
-        <button id="btnTime" onclick="sendTime(10);">Send time</button>
+        <button id="btnTime" onclick="sendTime();">Send time</button>
     </div>
 
 </section>
@@ -35,14 +35,9 @@
     
 
 
-    function sendTime(spam) {
-        const repeat = spam ? 10 : 1;
+    function sendTime(){
         var arr = ["adads", "sacxzx"]
-        var WebApp = window.Telegram.WebApp;
-        var id = WebApp.WebAppUser.username;
-
-        Telegram.WebApp.sendData(arr.toString());
-       
+        Telegram.WebApp.sendData(arr.toString());      
     }
 </script>
 </body>
