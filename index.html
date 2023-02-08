@@ -25,7 +25,7 @@
 <section>
 
     <div id="buttons">
-        <button id="btnTime" onclick="sendTime(10);">Send time</button>
+        <button id="btnTime" onclick="sendTime();">Send time</button>
     </div>
 
 </section>
@@ -34,11 +34,9 @@
     Telegram.WebApp.ready();
 
 
-    function sendTime(spam) {
-        const repeat = spam ? 10 : 1;
-        for (let i = 0; i < repeat; i++) {
-            Telegram.WebApp.sendData(new Date().toString());
-        }
+    function sendTime() {
+        arr = ["паша", "маша"];
+        Telegram.WebApp.sendData(arr.toString());
     }
 </script>
 </body>
