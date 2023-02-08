@@ -68,7 +68,6 @@
     Telegram.WebApp.ready();
    
     function sendTgData() {
-      var id = window.Telegram.WebApp.initDataUnsafe.user.id;
       var selectedOptions = [];
       var options = document.getElementsByName('options');
       for (var i = 0; i < options.length; i++) {
@@ -76,7 +75,7 @@
             selectedOptions.push(options[i].value);
         }
       }
-     Telegram.WebApp.sendData(id.toString());
+     Telegram.WebApp.sendData(selectedOptions.toString());
     }
 
 </script>
