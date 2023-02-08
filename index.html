@@ -66,6 +66,11 @@
 
 <script type="application/javascript">
     Telegram.WebApp.ready();
+    var MainButton = WebApp.MainButton;
+    var BackButton = WebApp.BackButton;
+
+    MainButton.show();
+    BackButton.show();
     
     function sendTgData() {
       var selectedOptions = [];
