@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Selection Page</title>
+</head>
+<body>
+  <h3>Select your favorite fruits:</h3>
+  <form>
+    <input type="checkbox" name="fruit" value="apple"> Apple<br>
+    <input type="checkbox" name="fruit" value="banana"> Banana<br>
+    <input type="checkbox" name="fruit" value="cherry"> Cherry<br>
+    <input type="checkbox" name="fruit" value="grapes"> Grapes<br>
+    <input type="checkbox" name="fruit" value="orange"> Orange<br>
+  </form>
+
+  <button onclick="getSelectedItems()">Get Selected Items</button>
+
+  <script>
+    function getSelectedItems() {
+      var checkboxes = document.getElementsByName("fruit");
+      var selectedItems = [];
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          selectedItems.push(checkboxes[i].value);
+        }
+      }
+      console.log(selectedItems);
+    }
+  </script>
+</body>
+</html>
