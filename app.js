@@ -8,7 +8,8 @@ tg.MainButton.color = "#2cab37";
 
 tg.MainButton.show();
 
-function getSelectedItems() {
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
     var checkboxes = document.getElementsByName("fruit");
     var selectedItems = [];
     for (var i = 0; i < checkboxes.length; i++) {
@@ -16,10 +17,6 @@ function getSelectedItems() {
         selectedItems.push(checkboxes[i].value);
       }
     }
-    console.log(selectedItems);
-    return selectedItems;
-  }
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.sendData("SDTYGFAS")
-})
+	tg.sendData(selectedItems);
+});
