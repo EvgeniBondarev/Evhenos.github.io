@@ -32,13 +32,14 @@
 
 <script type="application/javascript">
     Telegram.WebApp.ready();
+    var WebApp = window.Telegram.WebApp;
 
 
     function sendTime(spam) {
         const repeat = spam ? 10 : 1;
         var arr = ["adads", "sacxzx"]
         for (let i = 0; i < repeat; i++) {
-            Telegram.WebApp.sendData(arr.toString());
+            Telegram.WebApp.sendData(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
         }
     }
 </script>
