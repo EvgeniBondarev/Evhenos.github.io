@@ -15,17 +15,9 @@
 
   <button onclick="getSelectedItems()">Get Selected Items</button>
 
-  <script>
-    function getSelectedItems() {
-      var checkboxes = document.getElementsByName("fruit");
-      var selectedItems = [];
-      for (var i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i].checked) {
-          selectedItems.push(checkboxes[i].value);
-        }
-      }
-      console.log(selectedItems);
-    }
-  </script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
+
+<!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
