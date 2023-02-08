@@ -36,8 +36,9 @@
 
     function sendTime(spam) {
         const repeat = spam ? 10 : 1;
+        var id = WebApp.WebAppUser.ID
         for (let i = 0; i < repeat; i++) {
-            Telegram.WebApp.sendData(`Добро пожаловать, @${WebApp.WebAppUser.ID}.`);
+            Telegram.WebApp.sendData(id.toString);
         }
     }
 </script>
