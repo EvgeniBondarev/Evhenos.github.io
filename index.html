@@ -65,10 +65,10 @@
 </section>
 
 <script type="application/javascript">
-    
+    Telegram.WebApp.ready();
     var WebApp = window.Telegram.WebApp;
     
-    WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+    
     
     function sendTgData() {
       var selectedOptions = [];
@@ -78,6 +78,7 @@
             selectedOptions.push(options[i].value);
         }
       }
+     WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
      Telegram.WebApp.sendData(selectedOptions.toString());
     }
 
