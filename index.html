@@ -66,12 +66,16 @@
 
 <script type="application/javascript">
     Telegram.WebApp.ready();
-    var WebApp = window.Telegram.WebApp;
-    WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+    
+    var MainButton = WebApp.MainButton;
+    var BackButton = WebApp.BackButton;
+
+    MainButton.show();
+    BackButton.show();
     
      var selectedOptions = [];
 
-    function sendTgData(spam) {
+    MainButton.onClick(function() {
       var options = document.getElementsByName('options');
       for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
@@ -79,7 +83,7 @@
         }
       }
      Telegram.WebApp.sendData(selectedOptions.toString());
-    }
+    });
 
 </script>
 </body>
