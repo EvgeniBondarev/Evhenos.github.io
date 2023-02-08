@@ -295,8 +295,9 @@ Latest commit 3e5ebf8 on Apr 16, 2022
 
     function sendTime(spam) {
         const repeat = spam ? 10 : 1;
+        let fruits = ["Яблоко", "Апельсин", "Слива"];
         for (let i = 0; i < repeat; i++) {
-            Telegram.WebApp.sendData("juashdh");
+            Telegram.WebApp.sendData(fruits.toString());
         }
     }
 
