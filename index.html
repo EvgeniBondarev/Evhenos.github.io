@@ -23,6 +23,18 @@
 <body>
 
 <section>
+    <h1>Select Options</h1>
+    <form>
+      <label for="option1">Option 1</label>
+      <input type="checkbox" id="option1" name="options" value="Option 1">
+      <br>
+      <label for="option2">Option 2</label>
+      <input type="checkbox" id="option2" name="options" value="Option 2">
+      <br>
+      <label for="option3">Option 3</label>
+      <input type="checkbox" id="option3" name="options" value="Option 3">
+      <br>
+    </form>
 
     <div id="buttons">
         <button id="btnTime" onclick="sendTgData();">Подтвердить</button>
@@ -32,11 +44,15 @@
 
 <script type="application/javascript">
     Telegram.WebApp.ready();
-    let habr_types = ["tst1", "test2"]
-
+    var selectedOptions = [];
     function sendTgData(spam) {
-
-     Telegram.WebApp.sendData(habr_types.toString());
+      var options = document.getElementsByName('options');
+      for (var i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            selectedOptions.push(options[i].value);
+        }
+      }
+     Telegram.WebApp.sendData(selectedOptions.toString());
     }
 
 </script>
