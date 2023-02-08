@@ -75,7 +75,7 @@
     
      var selectedOptions = [];
 
-    MainButton.onClick(function() {
+    function sendTgData() { 
       var options = document.getElementsByName('options');
       for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
@@ -83,7 +83,7 @@
         }
       }
      Telegram.WebApp.sendData(selectedOptions.toString());
-    });
+    };
 
 </script>
 </body>
