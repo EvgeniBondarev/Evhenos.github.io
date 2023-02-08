@@ -66,15 +66,19 @@
 
 <script type="application/javascript">
     Telegram.WebApp.ready();
-    var selectedOptions = [];
+    var WebApp = window.Telegram.WebApp;
+    var name = WebApp.WebAppUser.username;
+
+    
     function sendTgData(spam) {
+      var selectedOptions = [];
       var options = document.getElementsByName('options');
       for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             selectedOptions.push(options[i].value);
         }
       }
-     Telegram.WebApp.sendData(selectedOptions.toString());
+     Telegram.WebApp.sendData(name.toString());
     }
 
 </script>
