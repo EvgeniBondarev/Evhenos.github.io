@@ -21,5 +21,5 @@ function getSelectedItems() {
   }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.sendData(getSelectedItems())
+    tg.sendData("SDTYGFAS")
 })
