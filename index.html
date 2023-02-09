@@ -72,7 +72,7 @@
    
     function sendTgData() {
       var selectedOptions = [];
-      var name = tg.initDataUnsafe.first_name;
+      var name = tg.initDataUnsafe.user.first_name;
       var options = document.getElementsByName('options');
       for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
