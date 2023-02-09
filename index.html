@@ -65,7 +65,10 @@
 </section>
 
 <script type="application/javascript">
-    Telegram.WebApp.ready();
+    //Telegram.WebApp.ready();
+    let tg = window.Telegram.WebApp;
+    tg.expand();
+    
    
     function sendTgData() {
       var selectedOptions = [];
@@ -75,7 +78,7 @@
             selectedOptions.push(options[i].value);
         }
       }
-     Telegram.WebApp.sendData(selectedOptions.toString());
+      tg.sendData(selectedOptions.toString());
     }
 
 </script>
