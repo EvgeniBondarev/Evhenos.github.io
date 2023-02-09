@@ -61,6 +61,7 @@
     <div id="buttons">
         <button id="btnTime" onclick="sendTgData()">Подтвердить</button>
     </div>
+    <p id="error-block-id">Err</p>
 
 </section>
 
@@ -71,15 +72,20 @@
     
    
     function sendTgData() {
-      var selectedOptions = [];
-      var name = tg.initDataUnsafe.user.first_name;
-      var options = document.getElementsByName('options');
-      for (var i = 0; i < options.length; i++) {
-        if (options[i].checked) {
-            selectedOptions.push(options[i].value);
-        }
-      }
-      tg.sendData(name.toString());
+      try {
+          var selectedOptions = [];
+          var name = tg.initDataUnsafe.user.first_name;
+          var options = document.getElementsByName('options');
+          for (var i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                selectedOptions.push(options[i].value);
+            }
+          }
+          tg.sendData(name.toString());
+      } catch (err) {
+         var errorElem = document.getElementById('error-block-id');
+          errorElem.innerHTML = "name: " + err.name + "message" + err.message;
+       }
     }
 
 </script>
