@@ -1,16 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!-- ... -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <!-- ... other scripts -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title></title>
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script>
+        function setThemeClass() {
+            document.documentElement.className = Telegram.WebApp.colorScheme;
+        }
+        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+        setThemeClass();
+    </script>
 </head>
-<body>
-</body>
-<script>
-    var WebApp = window.Telegram.WebApp;
 
-    WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+<body>
+
+<section>
+    <h1>Select Options</h1>
+    <form>
+      <label for="programming">Программирование *</label>
+      <input type="checkbox" id="programming" name="options" value="programming">
+      <br>
+      <label for="infosecurity">Информационная безопасность *</label>
+      <input type="checkbox" id="infosecurity" name="options" value="infosecurity">
+      <br>
+      <label for="popular_science">Научно-популярное</label>
+      <input type="checkbox" id="popular_science" name="options" value="popular_science">
+      <br>
+      <label for="itcompanies">IT-компании</label>
+      <input type="checkbox" id="itcompanies" name="options" value="itcompanies">
+      <br>
+      <label for="DIY">DIY или Сделай сам</label>
+      <input type="checkbox" id="DIY" name="options" value="DIY">
+      <br>
+      <label for="machine_learning">Машинное обучение *</label>
+      <input type="checkbox" id="machine_learning" name="options" value="machine_learning">
+      <br>
+      <label for="artificial_intelligence">Искусственный интеллект</label>
+      <input type="checkbox" id="artificial_intelligence" name="options" value="artificial_intelligence">
+      <br>
+      <label for="hr_management">Управление персоналом *</label>
+      <input type="checkbox" id="hr_management" name="options" value="hr_management">
+      <br>
+      <label for="read">Читальный зал</label>
+      <input type="checkbox" id="read" name="options" value="read">
+      <br>
+      <label for="python">Python *</label>
+      <input type="checkbox" id="python" name="options" value="python">
+      <br>
+      
+    </form>
+
+    <div id="buttons">
+        <button id="btnTime" onclick="sendTgData();">Подтвердить</button>
+    </div>
+
+</section>
+
+<script type="application/javascript">
+    Telegram.WebApp.ready();
+    
+     var selectedOptions = [];
+
+    function sendTgData(spam) {
+      var options = document.getElementsByName('options');
+      for (var i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            selectedOptions.push(options[i].value);
+        }
+      }
+     Telegram.WebApp.sendData(selectedOptions.toString());
+    }
+
 </script>
+</body>
 </html>
