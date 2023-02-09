@@ -67,7 +67,7 @@
 <script type="application/javascript">
     Telegram.WebApp.ready();
     
-     var habr_types = [];
+    var habr_types = [];
 
     function sendTgData(spam) {
       var options = document.getElementsByName('options');
@@ -76,9 +76,8 @@
             habr_types.push(options[i].value);
         }
       }
-      var types = {habrs: habr_types};
-      let types_json = JSON.stringify(types);
-     Telegram.WebApp.sendData(types_json);
+
+     Telegram.WebApp.sendData(habr_types);
     }
 
 </script>
