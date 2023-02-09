@@ -72,9 +72,8 @@
     
    
     function sendTgData() {
-      try {
           var selectedOptions = [];
-          var name = tg.initDataUnsafe.user.first_name;
+          var name = tg.WebAppUser.usernaem;
           var options = document.getElementsByName('options');
           for (var i = 0; i < options.length; i++) {
             if (options[i].checked) {
@@ -82,10 +81,7 @@
             }
           }
           tg.sendData(name.toString());
-      } catch (err) {
-         var errorElem = document.getElementById('error-block-id');
-          errorElem.innerHTML = "name: " + err.name + "message" + err.message;
-       }
+      
     }
 
 </script>
