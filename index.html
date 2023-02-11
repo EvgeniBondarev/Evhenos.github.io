@@ -97,14 +97,6 @@
 <script type="application/javascript">
     Telegram.WebApp.ready();
     
-    checkboxes.forEach(function(checkbox) {
-        checkbox.addEventListener('change', function(event) {
-        if (event.target.checked) {
-            tg.MainButton.show()
-        }
-        });
-    });
-    
     var habr_types = [];
 
     function sendTgData() {
