@@ -19,41 +19,70 @@
         setThemeClass();
     </script>
 </head>
-
+<style>
+    .check {
+        transform:scale(3.5);
+        opacity:0.9;
+        cursor:pointer;
+        padding-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 10px;
+    }
+    
+    .habrs_name{
+        padding-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 10px;
+    }
+    body {
+        font-family: Arial;
+        font-size: 16px;
+     }
+</style>
 <body>
 
 <section>
-    <h1>Select Options</h1>
+    <h1>Выберите хабы</h1>
     <form>
-      <label for="programming">Программирование *</label>
-      <input type="checkbox" id="programming" name="options" value="programming">
+      
+      <input class="check" type="checkbox" id="programming" name="options" value="programming">
+      <label for="programming" class="habrs_name">Программирование *</label>
       <br>
-      <label for="infosecurity">Информационная безопасность *</label>
-      <input type="checkbox" id="infosecurity" name="options" value="infosecurity">
+      
+      <input type="checkbox" class="check" id="infosecurity" name="options" value="infosecurity">
+      <label for="infosecurity" class="habrs_name">Информационная безопасность *</label>
       <br>
-      <label for="popular_science">Научно-популярное</label>
-      <input type="checkbox" id="popular_science" name="options" value="popular_science">
+      
+      <input type="checkbox" class="check" id="popular_science" name="options" value="popular_science">
+      <label for="popular_science" class="habrs_name">Научно-популярное</label>
       <br>
-      <label for="itcompanies">IT-компании</label>
-      <input type="checkbox" id="itcompanies" name="options" value="itcompanies">
+      
+      <input type="checkbox" class="check" id="itcompanies" name="options" value="itcompanies">
+      <label for="itcompanies" class="habrs_name">IT-компании</label>
       <br>
-      <label for="DIY">DIY или Сделай сам</label>
-      <input type="checkbox" id="DIY" name="options" value="DIY">
+      
+      <input type="checkbox" class="check" id="DIY" name="options" value="DIY">
+      <label for="DIY" class="habrs_name">DIY или Сделай сам</label>
       <br>
-      <label for="machine_learning">Машинное обучение *</label>
-      <input type="checkbox" id="machine_learning" name="options" value="machine_learning">
+      
+      <input type="checkbox" class="check" id="machine_learning" name="options" value="machine_learning">
+      <label for="machine_learning" class="habrs_name">Машинное обучение *</label>
       <br>
-      <label for="artificial_intelligence">Искусственный интеллект</label>
-      <input type="checkbox" id="artificial_intelligence" name="options" value="artificial_intelligence">
+      
+      <input type="checkbox" class="check" id="artificial_intelligence" name="options" value="artificial_intelligence">
+      <label for="artificial_intelligence" class="habrs_name">Искусственный интеллект</label>
       <br>
-      <label for="hr_management">Управление персоналом *</label>
-      <input type="checkbox" id="hr_management" name="options" value="hr_management">
+      
+      <input type="checkbox" class="check" id="hr_management" name="options" value="hr_management">
+      <label for="hr_management" class="habrs_name">Управление персоналом *</label>
       <br>
-      <label for="read">Читальный зал</label>
-      <input type="checkbox" id="read" name="options" value="read">
+      
+      <input type="checkbox" class="check" id="read" name="options" value="read">
+      <label for="read" class="habrs_name">Читальный зал</label>
       <br>
-      <label for="python">Python *</label>
-      <input type="checkbox" id="python" name="options" value="python">
+      
+      <input type="checkbox" class="check" id="python" name="options" value="python">
+      <label for="python" class="habrs_name">Python *</label>
       <br>
       
     </form>
